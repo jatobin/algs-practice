@@ -12,8 +12,8 @@ public class Node<T> {
         next = null;
     }
 
-    public void setNext(T val) {
-        this.val = val;
+    public void setNext(Node<T> next) {
+        this.next = next;
     }
 
     public Node<T> getNext() {
