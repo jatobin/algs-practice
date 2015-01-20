@@ -1,4 +1,4 @@
-package com.algspractice.node;
+package com.algspractice.node.ds;
 
 /**
  * Created by TobinJ on 1/14/2015.

@@ -1,6 +1,6 @@
 package com.algspractice.node.ut;
 
-import com.algspractice.node.Stack;
+import com.algspractice.node.ds.Stack;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,6 +1,6 @@
 package com.algspractice.node.ut;
 
-import com.algspractice.node.Queue;
+import com.algspractice.node.ds.Queue;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

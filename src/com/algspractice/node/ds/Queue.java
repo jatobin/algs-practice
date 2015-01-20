@@ -1,4 +1,6 @@
-package com.algspractice.node;
+package com.algspractice.node.ds;
+
+import com.algspractice.node.ds.Node;
 
 /**
  * Created by TobinJ on 1/14/2015.
