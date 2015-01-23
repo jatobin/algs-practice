@@ -1,6 +1,6 @@
 package com.algspractice.node.ut;
 
-import com.algspractice.node.ds.Node;
+import com.algspractice.node.ds.LinkedNode;
 import com.algspractice.node.probs.ReorderList;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,13 +13,13 @@ public class ReorderListTest {
     @Test
     public void basicFourLengthTest() {
 
-        Node a = new Node<Integer>(1);
-        Node ahead = a;
-        a.setNext(new Node<Integer>(2));
+        LinkedNode a = new LinkedNode<Integer>(1);
+        LinkedNode ahead = a;
+        a.setNext(new LinkedNode<Integer>(2));
         a = a.getNext();
-        a.setNext(new Node<Integer>(3));
+        a.setNext(new LinkedNode<Integer>(3));
         a = a.getNext();
-        a.setNext(new Node<Integer>(4));
+        a.setNext(new LinkedNode<Integer>(4));
         a = a.getNext();
 
         //1,2,3,4 -> 1,4,2,3

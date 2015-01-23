@@ -1,13 +1,13 @@
 package com.algspractice.node.probs;
 
-import com.algspractice.node.ds.Node;
+import com.algspractice.node.ds.LinkedNode;
 
 /**
  * Created by jtobin on 17/01/15.
  */
 public class ReorderList {
 
-    public static void reorderList(Node head) {
+    public static void reorderList(LinkedNode head) {
 
         //determine the midpoint and end of the list using fast and slow pointers
         //reverse the second list
@@ -15,8 +15,8 @@ public class ReorderList {
 
         if (head == null || head.getNext() == null) return;
 
-        Node fast = head;
-        Node slow = head;
+        LinkedNode fast = head;
+        LinkedNode slow = head;
         //1 -> 2; 1->3
         //when loop breaks, then fast will be at the end, and slow will be in the middle.
         while (fast.getNext() != null && fast.getNext().getNext() != null) {
@@ -25,7 +25,7 @@ public class ReorderList {
             fast = fast.getNext().getNext();
         }
 
-        Node second = slow.getNext();
+        LinkedNode second = slow.getNext();
         slow.setNext(null);
 
 
@@ -33,14 +33,14 @@ public class ReorderList {
         second = reverseOrder(second);
 
         //second is now the head of the reversed list, the end of the reversed list.
-        Node p1 = head; //{1}
-        Node p2 = second; //{4}
+        LinkedNode p1 = head; //{1}
+        LinkedNode p2 = second; //{4}
 
         //merge back together
         //{1->2} {4->3}
         while (p2 != null) {
-            Node tmp1 = p1.getNext();
-            Node tmp2 = p2.getNext();
+            LinkedNode tmp1 = p1.getNext();
+            LinkedNode tmp2 = p2.getNext();
 
             p1.setNext(p2);
             p2.setNext(tmp1);
@@ -54,21 +54,21 @@ public class ReorderList {
 
     }
 
-    private static Node reverseOrder(Node node) {
-        if (node == null || node.getNext() == null) return node;
-        Node pre    = node;
-        Node curr   = node;
+    private static LinkedNode reverseOrder(LinkedNode linkedNode) {
+        if (linkedNode == null || linkedNode.getNext() == null) return linkedNode;
+        LinkedNode pre    = linkedNode;
+        LinkedNode curr   = linkedNode;
 
         //A->B->C->D
         //hold C. point B back to A. the new "head" becomes B. then increment both nodes.
 
         while (curr != null) {
-            Node temp = curr.getNext();
+            LinkedNode temp = curr.getNext();
             curr.setNext(pre);
             pre = curr;
             curr = temp;
         }
-        node.setNext(null);
+        linkedNode.setNext(null);
 
         return pre;
     }

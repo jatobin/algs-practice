@@ -1,16 +1,14 @@
 package com.algspractice.node.ds;
 
-import com.algspractice.node.ds.Node;
-
 /**
  * Created by TobinJ on 1/14/2015.
  */
 public class Stack<T> {
 
-    Node<T> top;
+    LinkedNode<T> top;
 
     public Stack(T top) {
-        this.top = new Node(top);
+        this.top = new LinkedNode(top);
     }
 
     public T peek() {
@@ -21,10 +19,10 @@ public class Stack<T> {
     }
 
     public void push(T val) {
-        Node<T> xval = new Node<T>(val);
-        if (xval != null) {
-            xval.setNext(top);
-            top = xval;
+        if (val != null) {
+            LinkedNode<T> tempNode = new LinkedNode<T>(val);
+            tempNode.setNext(top);
+            top = tempNode;
         }
     }
 
@@ -32,7 +30,7 @@ public class Stack<T> {
         if (top == null) {
             return null;
         } else {
-            Node<T> temp = new Node<T>(top.getVal());
+            Node<T> temp = new LinkedNode<T>(top.getVal());
             top = top.getNext();
             return temp.getVal();
         }

@@ -1,22 +1,20 @@
 package com.algspractice.node.ds;
 
-import com.algspractice.node.ds.Node;
-
 /**
  * Created by TobinJ on 1/14/2015.
  */
 public class Queue<T> {
 
-    private Node<T> first,last;
+    private LinkedNode<T> first,last;
 
     public void Queue() {};
 
     public void enqueue(T val) {
         if (first == null) {
-            first = new Node<T>(val);
+            first = new LinkedNode<T>(val);
             last = first;
         } else {
-            Node temp = new Node<T>(val);
+            LinkedNode temp = new LinkedNode<T>(val);
             last.setNext(temp);
             last = temp;
         }
@@ -26,7 +24,7 @@ public class Queue<T> {
         if (first == null) {
             return null;
         } else {
-            Node<T> t = new Node(first.getVal());
+            LinkedNode<T> t = new LinkedNode(first.getVal());
             first = first.getNext();
             return t.getVal();
         }

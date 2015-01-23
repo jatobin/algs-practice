@@ -1,16 +1,16 @@
 package com.algspractice.node.probs;
 
-import com.algspractice.node.ds.Node;
+import com.algspractice.node.ds.LinkedNode;
 
 /**
  * Created by jtobin on 19/01/15.
  */
 public class LinkedCycle {
 
-    public static boolean hasCycle(Node head) {
+    public static boolean hasCycle(LinkedNode head) {
 
-        Node fast = head;
-        Node slow = head;
+        LinkedNode fast = head;
+        LinkedNode slow = head;
 
         //not sure i believe this solution - what if the first and last node form a cycle? this alg
         //would not find it...

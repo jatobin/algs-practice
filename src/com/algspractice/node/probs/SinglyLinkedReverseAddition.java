@@ -1,16 +1,16 @@
 package com.algspractice.node.probs;
 
-import com.algspractice.node.ds.Node;
+import com.algspractice.node.ds.LinkedNode;
 
 /**
  * Created by jtobin on 17/01/15.
  */
 public class SinglyLinkedReverseAddition {
 
-    public static Node addTwoLists(Node<Integer> a, Node<Integer> b) {
+    public static LinkedNode addTwoLists(LinkedNode<Integer> a, LinkedNode<Integer> b) {
 
-        Node<Integer> result = new Node<Integer>(0);
-        Node<Integer> resultHead = result;
+        LinkedNode<Integer> result = new LinkedNode<Integer>(0);
+        LinkedNode<Integer> resultHead = result;
         boolean carry = false;
 
         while ((a != null && a.getVal() != null) && (b != null && b.getVal() != null)) {
@@ -31,7 +31,7 @@ public class SinglyLinkedReverseAddition {
             a = a.getNext();
             b = b.getNext();
 
-            result.setNext(new Node<Integer>(0));
+            result.setNext(new LinkedNode<Integer>(0));
             result = result.getNext();
         }
 
@@ -39,7 +39,7 @@ public class SinglyLinkedReverseAddition {
             result.setVal(a.getVal() + (carry? 1 : 0));
             carry = false;
             a = a.getNext();
-            result.setNext(new Node<Integer>(0));
+            result.setNext(new LinkedNode<Integer>(0));
             result = result.getNext();
         }
 
@@ -47,7 +47,7 @@ public class SinglyLinkedReverseAddition {
             result.setVal(b.getVal() + (carry? 1 : 0));
             carry = false;
             b = b.getNext();
-            result.setNext(new Node<Integer>(0));
+            result.setNext(new LinkedNode<Integer>(0));
             result = result.getNext();
         }
         return resultHead;

@@ -1,7 +1,8 @@
 package com.algspractice.node.ut;
 
-import com.algspractice.node.ds.Node;
+import com.algspractice.node.ds.LinkedNode;
 import com.algspractice.node.probs.LinkedCycle;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,11 +11,12 @@ import static org.junit.Assert.assertEquals;
  */
 public class LinkedCycleTest {
 
+    @Test
     public void LinkedCycleTest() {
-        Node a = new Node<Integer>(1);
-        Node b = new Node<Integer>(2);
+        LinkedNode a = new LinkedNode<Integer>(1);
+        LinkedNode b = new LinkedNode<Integer>(2);
         a.setNext(b);
-        Node c = new Node<Integer>(3);
+        LinkedNode c = new LinkedNode<Integer>(3);
         b.setNext(c);
         c.setNext(a);
 
