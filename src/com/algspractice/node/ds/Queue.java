@@ -7,7 +7,11 @@ public class Queue<T> {
 
     private LinkedNode<T> first,last;
 
-    public void Queue() {};
+
+    public Queue() {
+        first = null;
+        last = null;
+    }
 
     public void enqueue(T val) {
         if (first == null) {

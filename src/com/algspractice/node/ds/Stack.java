@@ -5,12 +5,15 @@ package com.algspractice.node.ds;
  */
 public class Stack<T> {
 
-    LinkedNode<T> top;
+    private LinkedNode<T> top;
 
     public Stack(T top) {
         this.top = new LinkedNode(top);
     }
 
+    public Stack() {
+        top = null;
+    }
     public T peek() {
         if (top != null) {
             return top.getVal();
@@ -36,4 +39,7 @@ public class Stack<T> {
         }
     }
 
+    public boolean empty() {
+        return top == null;
+    }
 }
