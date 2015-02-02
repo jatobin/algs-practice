@@ -4,6 +4,7 @@ import apple.laf.JRSUIUtils;
 import com.algspractice.node.ds.Node;
 import com.algspractice.node.ds.TreeNode;
 import com.algspractice.node.probs.InOrderTreeTraversal;
+import com.algspractice.node.probs.PostOrderTreeTraversal;
 import com.algspractice.node.probs.PreorderTreeTraversal;
 import com.algspractice.node.probs.TreeTraversal;
 import org.junit.Before;
@@ -36,6 +37,7 @@ public class TreeTraversalTest {
         treeTraversalMap = new HashMap<TraversalType, TreeTraversal>();
         treeTraversalMap.put(TraversalType.PreOrder, new PreorderTreeTraversal());
         treeTraversalMap.put(TraversalType.InOrder, new InOrderTreeTraversal());
+        treeTraversalMap.put(TraversalType.PostOrder, new PostOrderTreeTraversal());
 
         TreeNode tempRoot = new TreeNode("F");
 
@@ -113,6 +115,23 @@ public class TreeTraversalTest {
     public void testInOrderRecursive() {
         List<Node> l = treeTraversalMap.get(TraversalType.InOrder).recursiveTraversal(root);
         assertEquals(traversalSolutionMap.get(TraversalType.InOrder), convertNodeToString(l));
+    }
+
+    @Test
+    public void testPostOrderBaseCaseRecursive() {
+        List<Node> l = treeTraversalMap.get(TraversalType.InOrder).recursiveTraversal(null);
+        assertEquals(true, l.isEmpty());
+    }
+    @Test
+    public void testPostOrderRecursive() {
+        List<Node> l = treeTraversalMap.get(TraversalType.PostOrder).recursiveTraversal(root);
+        assertEquals(traversalSolutionMap.get(TraversalType.PostOrder), convertNodeToString(l));
+    }
+
+    @Test
+    public void testPostOrderIterative() {
+        List<Node> l = treeTraversalMap.get(TraversalType.PostOrder).recursiveTraversal(root);
+        assertEquals(traversalSolutionMap.get(TraversalType.PostOrder), convertNodeToString(l));
     }
 
     private String convertNodeToString(List<Node> l) {
