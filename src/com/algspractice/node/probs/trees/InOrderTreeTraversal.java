@@ -1,4 +1,4 @@
-package com.algspractice.node.probs;
+package com.algspractice.node.probs.trees;
 
 import com.algspractice.node.ds.Node;
 import com.algspractice.node.ds.Stack;

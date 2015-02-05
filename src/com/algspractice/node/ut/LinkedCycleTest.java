@@ -1,7 +1,7 @@
 package com.algspractice.node.ut;
 
 import com.algspractice.node.ds.LinkedNode;
-import com.algspractice.node.probs.LinkedCycle;
+import com.algspractice.node.probs.list.LinkedCycle;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

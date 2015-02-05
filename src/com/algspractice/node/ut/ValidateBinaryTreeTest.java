@@ -1,11 +1,9 @@
 package com.algspractice.node.ut;
 
 import com.algspractice.node.ds.TreeNode;
-import com.algspractice.node.probs.ValidateBinaryTree;
+import com.algspractice.node.probs.trees.ValidateBinaryTree;
 import org.junit.Before;
 import org.junit.Test;
-
-import javax.swing.tree.TreeModel;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;

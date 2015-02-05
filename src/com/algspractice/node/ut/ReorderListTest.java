@@ -1,7 +1,7 @@
 package com.algspractice.node.ut;
 
 import com.algspractice.node.ds.LinkedNode;
-import com.algspractice.node.probs.ReorderList;
+import com.algspractice.node.probs.list.ReorderList;
 import org.junit.Assert;
 import org.junit.Test;
 

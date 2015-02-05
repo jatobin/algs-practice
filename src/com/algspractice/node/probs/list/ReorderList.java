@@ -1,4 +1,4 @@
-package com.algspractice.node.probs;
+package com.algspractice.node.probs.list;
 
 import com.algspractice.node.ds.LinkedNode;
 

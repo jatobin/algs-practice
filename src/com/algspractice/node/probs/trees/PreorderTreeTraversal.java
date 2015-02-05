@@ -1,4 +1,4 @@
-package com.algspractice.node.probs;
+package com.algspractice.node.probs.trees;
 
 import com.algspractice.node.ds.Node;
 import com.algspractice.node.ds.Stack;
@@ -11,44 +11,42 @@ import java.util.List;
 /**
  * Created by jtobin on 22/01/15.
  */
-public class PostOrderTreeTraversal implements TreeTraversal {
+public class PreorderTreeTraversal implements TreeTraversal {
+
     @Override
     public List<Node> iterativeTraversal(TreeNode root) {
+        ArrayList<Node> returnList = new ArrayList<Node>();
 
-        if (root == null) return Collections.emptyList();
-        List<Node> returnList = new ArrayList<Node>();
-        Stack<TreeNode> nodeStack = new Stack<TreeNode>(root);
+        if (root == null) return returnList;
+        Stack<TreeNode> s = new Stack<TreeNode>(root);
 
-        while(!nodeStack.empty()) {
-            TreeNode t = nodeStack.pop();
+        while (!s.empty()) {
+            TreeNode n = s.pop();
+            returnList.add(n);
 
-            if (t.getLeft() != null) {
-                nodeStack.push(t.getLeft());
+            if (n.getRight() != null) {
+                s.push(n.getRight());
             }
 
-            if (t.getRight() != null) {
-                nodeStack.push(t.getRight());
+            if(n.getLeft() != null) {
+                s.push(n.getLeft());
             }
-
-            returnList.add(t);
-
         }
 
         return returnList;
-
     }
 
     @Override
-    public List<Node> recursiveTraversal(TreeNode root)
-    {
+    public List<Node> recursiveTraversal(TreeNode root) {
 
         if (root == null) return Collections.emptyList();
 
         List<Node> returnList = new ArrayList<Node>();
+        returnList.add(root);
         returnList.addAll(recursiveTraversal(root.getLeft()));
         returnList.addAll(recursiveTraversal(root.getRight()));
-        returnList.add(root);
 
         return returnList;
     }
+
 }

@@ -1,7 +1,7 @@
 package com.algspractice.node.ut;
 
 import com.algspractice.node.ds.LinkedNode;
-import com.algspractice.node.probs.SinglyLinkedReverseAddition;
+import com.algspractice.node.probs.list.SinglyLinkedReverseAddition;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
